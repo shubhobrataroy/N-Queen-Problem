@@ -95,6 +95,30 @@ public:
 			}
 			if (graph[x1][y1] == 'Q') return false;
 		}
+
+
+		while (true)
+		{
+			x1--; y1++;
+			if (x1 < 0 | y1 >= 8) {
+				x1 = x;
+				y1 = y;
+				break;
+			}
+			if (graph[x1][y1] == 'Q') return false;
+		}
+
+		while (true)
+		{
+			x1++; y1--;
+			if (x1 >7  | y1 < 0) {
+				x1 = x;
+				y1 = y;
+				break;
+			}
+			if (graph[x1][y1] == 'Q') return false;
+		}
+
 		graph[x][y] = 'Q';
 		return true;
 	}
